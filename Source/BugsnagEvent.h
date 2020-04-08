@@ -17,6 +17,7 @@
 @class BugsnagDeviceWithState;
 @class BugsnagMetadata;
 @class BugsnagThread;
+@class BugsnagError;
 
 typedef NS_ENUM(NSUInteger, BSGSeverity) {
     BSGSeverityError,
@@ -93,14 +94,14 @@ initWithErrorName:(NSString *_Nonnull)name
  *  The severity of the error generating the report
  */
 @property(readwrite) BSGSeverity severity;
+
 /**
- *  The class of the error generating the report
+ * Information extracted from the error that caused the event. The list contains
+ * at least one error that represents the root cause, with subsequent elements populated
+ * from the cause.
  */
-@property(readwrite, copy, nonnull) NSString *errorClass;
-/**
- *  The message of or reason for the error generating the report
- */
-@property(readwrite, copy, nullable) NSString *errorMessage;
+@property(readonly, nonnull) NSMutableArray<BugsnagError *> *errors;
+
 /**
  *  Customized hash for grouping this report with other errors
  */
