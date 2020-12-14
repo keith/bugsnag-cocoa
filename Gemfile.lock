@@ -92,7 +92,7 @@ GEM
     netrc (0.11.0)
     os (1.0.1)
     power_assert (1.1.4)
-    rack (2.0.7)
+    rack (2.0.9)
     rake (12.3.2)
     rouge (2.0.7)
     ruby-macho (1.2.0)
